@@ -3,6 +3,7 @@ const tseslint = require('@typescript-eslint/eslint-plugin');
 const tsparser = require('@typescript-eslint/parser');
 const prettier = require('eslint-plugin-prettier');
 const prettierConfig = require('eslint-config-prettier');
+const globals = require('globals');
 
 module.exports = [
   js.configs.recommended,
@@ -26,12 +27,8 @@ module.exports = [
         sourceType: 'module',
       },
       globals: {
-        document: 'readonly',
-        window: 'readonly',
+        ...globals.browser,
         chrome: 'readonly',
-        HTMLElement: 'readonly',
-        HTMLButtonElement: 'readonly',
-        HTMLDivElement: 'readonly',
       },
     },
     plugins: {
