@@ -3,15 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Extension</title>
+    <title>駅名取得</title>
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
     <div class="container">
-        <h1>My Chrome Extension</h1>
-        <p>拡張機能が正常に動作しています！</p>
-        <button id="actionBtn">アクション実行</button>
-        <div id="result"></div>
+        <h1>駅名取得ツール</h1>
+        <p>どこかにビューン対応ページから駅名を自動取得します</p>
+
+        <!-- Error message banner -->
+        <div id="errorBanner" class="error-banner hidden">
+            <span id="errorMessage"></span>
+        </div>
+
+        <div class="settings-section">
+            <label class="toggle-label">
+                <input type="checkbox" id="showExtractedStations" checked>
+                <span>取得した駅名を表示</span>
+            </label>
+        </div>
+
+        <div class="station-section" id="extractedStationsSection">
+            <h2>取得した駅名</h2>
+            <div id="result" class="info-box"></div>
+            <ul id="stationList" class="station-list"></ul>
+            <button id="actionBtn" class="btn btn-primary">手動で再取得</button>
+        </div>
+
+        <div class="station-section">
+            <h2>手動追加した駅名</h2>
+            <div id="manualResult" class="info-box"></div>
+            <ul id="manualStationList" class="station-list"></ul>
+            <div class="station-input-section">
+                <input type="text" id="stationInput" placeholder="例: 東京駅">
+                <button id="addStationBtn" class="btn btn-secondary">駅名を追加</button>
+            </div>
+        </div>
     </div>
     <script src="popup.js"></script>
 </body>

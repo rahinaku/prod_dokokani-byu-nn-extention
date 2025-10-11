@@ -44,6 +44,12 @@ module.exports = [
     },
   },
   {
-    ignores: ['node_modules/', 'public/', '*.js.map', 'webpack.config.js'],
+    ignores: [
+      'node_modules/',
+      'public/',
+      'dist/',
+      '*.js.map',
+      'webpack.config.js',
+    ],
   },
 ];

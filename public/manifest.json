@@ -1,18 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "My Chrome Extension",
+  "name": "どこかにビューン 駅名取得ツール",
   "version": "1.0.0",
-  "description": "A basic Chrome extension template",
+  "description": "どこかにビューン対応ページから駅名を取得する拡張機能",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "scripting",
+    "storage"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "My Extension"
+    "default_title": "駅名取得"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://dokokani-eki-net.com/dokokani/candidates","https://dokokani-eki-net.com/dokokani/trial/candidates"],
       "js": ["content.js"]
     }
   ],

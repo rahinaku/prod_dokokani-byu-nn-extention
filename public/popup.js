@@ -1,2 +1,0 @@
-(()=>{"use strict";document.addEventListener("DOMContentLoaded",function(){const t=document.getElementById("actionBtn"),e=document.getElementById("result");t.addEventListener("click",function(){chrome.tabs.query({active:!0,currentWindow:!0},function(t){const n=t[0];n&&n.title&&(e.innerHTML=`<p>現在のタブ: ${n.title}</p>`)})}),e.innerHTML="<p>拡張機能が読み込まれました</p>"})})();
-//# sourceMappingURL=popup.js.map
